@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ===== ÜST NAVİGASYON ===== */
+      .top-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 16px;
+        gap: 16px;
+        font-size: 13px;
+      }
+
+      .top-nav a {
+        color: rgba(0, 0, 0, 0.87);
+        text-decoration: none;
+      }
+
+      .top-nav a:hover {
+        text-decoration: underline;
+      }
+
+      .apps-icon {
+        width: 24px;
+        height: 24px;
+        display: grid;
+        grid-template-columns: repeat(3, 5px);
+        grid-template-rows: repeat(3, 5px);
+        gap: 2px;
+        padding: 8px;
+        box-sizing: content-box;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .apps-icon:hover {
+        background-color: #f0f0f0;
+      }
+
+      .apps-icon span {
+        width: 5px;
+        height: 5px;
+        background-color: #5f6368;
+        border-radius: 50%;
+      }
+
+      .sign-in-btn {
+        background-color: #1a73e8;
+        color: #fff !important;
+        padding: 9px 23px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .sign-in-btn:hover {
+        background-color: #1765cc;
+        text-decoration: none !important;
+      }
+
+      /* ===== ANA İÇERİK ===== */
+      .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 100px;
+      }
+
+      .logo {
+        width: 272px;
+        margin-bottom: 28px;
+      }
+
+      /* ===== ARAMA KUTUSU ===== */
+      .search-wrapper {
+        width: 100%;
+        max-width: 584px;
+        padding: 0 16px;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 44px;
+        border: 1px solid #dfe1e5;
+        border-radius: 24px;
+        padding: 0 14px;
+        transition: box-shadow 0.2s;
+      }
+
+      .search-bar:hover,
+      .search-bar:focus-within {
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        border-color: rgba(223, 225, 229, 0);
+      }
+
+      .search-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .search-bar input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        background: transparent;
+      }
+
+      .mic-icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      /* ===== BUTONLAR ===== */
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .buttons button {
+        background-color: #f8f9fa;
+        border: 1px solid #f8f9fa;
+        border-radius: 4px;
+        color: #3c4043;
+        font-size: 14px;
+        padding: 0 16px;
+        height: 36px;
+        cursor: pointer;
+      }
+
+      .buttons button:hover {
+        border: 1px solid #dadce0;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ===== DİL SEÇENEKLERİ ===== */
+      .language {
+        margin-top: 16px;
+        font-size: 13px;
+        color: #4d5156;
+      }
+
+      .language a {
+        color: #1a0dab;
+        text-decoration: none;
+        margin: 0 4px;
+        font-weight: 700;
+      }
+
+      .language a:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== ALT KISIM (FOOTER) ===== */
+      footer {
+        background-color: #f2f2f2;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.54);
+      }
+
+      .footer-top {
+        padding: 15px 30px;
+        border-bottom: 1px solid #dadce0;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 30px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .footer-left,
+      .footer-right {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      footer a {
+        color: rgba(0, 0, 0, 0.54);
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ÜST NAVİGASYON BARI ===== -->
+    <nav class="top-nav">
+      <a href="#">Gmail</a>
+      <a href="#">Görseller</a>
+
+      <!-- Google Apps İkonu (9 nokta) -->
+      <div class="apps-icon">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+
+      <a href="#" class="sign-in-btn">Oturum açın</a>
+    </nav>
+
+    <!-- ===== ANA İÇERİK ===== -->
+    <main class="main">
+
+      <!-- Google Logo -->
+      <img class="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google">
+
+      <!-- Arama Kutusu -->
+      <div class="search-wrapper">
+        <div class="search-bar">
+          <!-- Arama İkonu (SVG) -->
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#9aa0a6">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+
+          <input type="text" title="Ara">
+
+          <!-- Mikrofon İkonu (SVG) -->
+          <svg class="mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M12 15c1.66 0 3-1.34 3-3V6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3z"/>
+            <path fill="#34a853" d="M11 18.93V22h2v-3.07c3.39-.49 6-3.39 6-6.93h-2c0 2.76-2.24 5-5 5"/>
+            <path fill="#f4b400" d="M7 12H5c0 3.53 2.61 6.44 6 6.93V22h2v-3.07"/>
+            <path fill="#ea4335" d="M12 15c-2.76 0-5-2.24-5-5H5c0 3.53 2.61 6.44 6 6.93"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Arama Butonları -->
+      <div class="buttons">
+        <button>Google'da Ara</button>
+        <button>Şansımı Deneyeceğim</button>
+      </div>
+
+      <!-- Dil Seçenekleri -->
+      <p class="language">
+        Google şu dilde de var:
+        <a href="#">English</a>
+      </p>
+    </main>
+
+    <!-- ===== ALT KISIM (FOOTER) ===== -->
+    <footer>
+      <div class="footer-top">
+        Türkiye
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <a href="#">Hakkımızda</a>
+          <a href="#">Reklam</a>
+          <a href="#">İşletme</a>
+          <a href="#">Arama nasıl çalışır?</a>
+        </div>
+        <div class="footer-right">
+          <a href="#">Gizlilik</a>
+          <a href="#">Şartlar</a>
+          <a href="#">Ayarlar</a>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>

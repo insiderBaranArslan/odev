@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insider One Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">Insider One Survey Form</h1>
+    <p id="description">Help us improve Insider One by sharing your experience with our platform</p>
+
+    <form id="survey-form">
+      <div class="form-group">
+        <label id="name-label" for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label id="email-label" for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your work email" required>
+      </div>
+
+      <div class="form-group">
+        <label id="number-label" for="number">Years of experience with Insider <span class="optional">(optional)</span></label>
+        <input type="number" id="number" placeholder="Years" min="0" max="20">
+      </div>
+
+      <div class="form-group">
+        <label for="dropdown">Which option best describes your current role?</label>
+        <select id="dropdown">
+          <option disabled selected value="">Select current role</option>
+          <option value="marketing-manager">Marketing Manager</option>
+          <option value="growth-hacker">Growth Hacker</option>
+          <option value="product-manager">Product Manager</option>
+          <option value="developer">Developer</option>
+          <option value="data-analyst">Data Analyst</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Would you recommend Insider One to a colleague?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="recommend" value="definitely"> Definitely</label>
+          <label><input type="radio" name="recommend" value="maybe"> Maybe</label>
+          <label><input type="radio" name="recommend" value="not-sure"> Not sure</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dropdown-feature">What is your favorite Insider One feature?</label>
+        <select id="dropdown-feature">
+          <option disabled selected value="">Select a feature</option>
+          <option value="web-push">Web Push Notifications</option>
+          <option value="onsite-personalization">Onsite Personalization</option>
+          <option value="email-campaigns">Email Campaigns</option>
+          <option value="predictive-segments">Predictive Segments (AI)</option>
+          <option value="journey-orchestration">Journey Orchestration</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Which channels do you actively use? <span class="optional">(Check all that apply)</span></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="web-push"> Web Push</label>
+          <label><input type="checkbox" value="app-push"> App Push</label>
+          <label><input type="checkbox" value="email"> Email</label>
+          <label><input type="checkbox" value="sms"> SMS</label>
+          <label><input type="checkbox" value="whatsapp"> WhatsApp</label>
+          <label><input type="checkbox" value="onsite"> Onsite (Banners & Popups)</label>
+          <label><input type="checkbox" value="inapp"> In-App Messages</label>
+          <label><input type="checkbox" value="social-ads"> Social Media Ads</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Any comments or suggestions for Insider One?</label>
+        <textarea id="comments" placeholder="Share your feedback about the platform..." rows="5"></textarea>
+      </div>
+
+      <button type="submit" id="submit">Submit</button>
+    </form>
+</body>
+</html>
